@@ -16,7 +16,7 @@ const EditBook = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`http://localhost:5555/books/${id}`)
+        axios.get(`https://book-store-backend-five.vercel.app/books/${id}`)
             .then((response) => {
                 setAuthor(response.data.author);
                 setPublishYear(response.data.publishYear)
@@ -24,7 +24,7 @@ const EditBook = () => {
                 setLoading(false);
             }).catch((error) => {
                 setLoading(false);
-                alert('An error happened. Please Chack console');
+                alert('An error happened. Please Check console');
                 console.log(error);
             });
     }, [])
@@ -45,7 +45,7 @@ const EditBook = () => {
             })
             .catch((error) => {
                 setLoading(false);
-                // alert('An error happened. Please Chack console');
+                // alert('An error happened. Please Check console');
                 enqueueSnackbar('Error', { variant: 'error' });
                 console.log(error);
             });
